@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { TokenContext } from "./_app";
 import withAuth from "../utils/utils";
 
+import Sidebar from "../components/Sidebar";
+
 import Link from "next/link";
 
 const Home = () => {
@@ -34,11 +36,11 @@ const Home = () => {
   }, [token]);
 
   return (
-    <>
+    <div className="bg-slate-50">
       {token ? (
-        <div>
-          <p>access granted</p>
-          <p>welcome {name}</p>
+        <div className="flex flex-row justify-between">
+          <Sidebar />
+          <p className="float-right">welcome {name}</p>
           <button
             onClick={async () => {
               const response = await fetch(
@@ -52,9 +54,10 @@ const Home = () => {
 
               if (result) setToken("");
             }}
-          >
-            <Link href="/auth/login">Logout</Link>
-          </button>
+          ></button>
+          <Link className="mx-3" href="/auth/login">
+            Logout
+          </Link>
         </div>
       ) : (
         <div>
@@ -64,7 +67,7 @@ const Home = () => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
   // return <AuthToggle />;
 };
