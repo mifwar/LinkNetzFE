@@ -63,7 +63,7 @@ const Login = (props) => {
         </div>
       </div>
       <h1 className="text-2xl text-center my-2 mx-20">Welcome to LinkSavvy!</h1>
-      <h4 className="text-sm text-center my-2">sign in to continue</h4>
+      <h4 className="text-sm text-center my-2">log in to continue</h4>
 
       <div className="w-96 mx-auto">
         <form onSubmit={handleLogin} className="rounded-b-xl px-8 pt-6">
@@ -116,7 +116,7 @@ const Login = (props) => {
               className="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
               type="submit"
             >
-              Sign In
+              Log In
             </button>
             <div className="flex justify-center items-center my-3">
               <hr className="border-t border-gray-400 flex-grow" />
@@ -135,7 +135,7 @@ const Login = (props) => {
             className="underline hover:text-blue-500 cursor-pointer"
             onClick={() => setMode("register")}
           >
-            Sign up
+            Register
           </button>
         </Link>
       </div>
