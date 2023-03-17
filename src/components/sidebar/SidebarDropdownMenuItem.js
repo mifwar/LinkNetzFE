@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { AiOutlinePlus, AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
-export default ({ label, icon, handler, placeholder, ref, contents }) => {
-  const [showHidden, setShowHidden] = useState({});
+import Modal from "../modal/Modal";
+import SidebarForm from "./SidebarForm";
 
-  const handleArrow = (key) => {
-    setShowHidden((prev) => {
-      return { ...prev, [key]: !prev[key] };
-    });
-  };
+export default ({ label, icon, handler, placeholder, ref, contents }) => {
+  const [showHidden, setShowHidden] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const renderMenuItems = (menuItem) => {
     return menuItem.map((sub, i) => {
@@ -26,10 +24,15 @@ export default ({ label, icon, handler, placeholder, ref, contents }) => {
 
   return (
     <div className="w-full">
+      {showModal && (
+        <Modal title={`Add New ${label}`} setShowModal={setShowModal}>
+          <SidebarForm label={label} />
+        </Modal>
+      )}
       <button
         className="flex flex-row items-center gap-2 w-full font-Lato px-3 hover:bg-slate-200 "
         onClick={() => {
-          handleArrow(label);
+          setShowHidden(!showHidden);
         }}
       >
         <div>{icon}</div>
@@ -37,17 +40,17 @@ export default ({ label, icon, handler, placeholder, ref, contents }) => {
           <p className="py-2 ">{label}</p>
         </div>
         <div className="mx-auto mr-0">
-          {!showHidden[label] ? <AiOutlineDown /> : <AiOutlineUp />}
+          {!showHidden ? <AiOutlineDown /> : <AiOutlineUp />}
         </div>
       </button>
-      {showHidden[label] && (
+      {showHidden && (
         <div className="flex flex-col gap-1 ">
           {renderMenuItems(contents)}
           <button
             className="flex flex-row items-center gap-2 text-gray-500 hover:bg-slate-200 w-full px-9"
-            // onClick={() => {
-            //   handleToggleAddNew(label);
-            // }}
+            onClick={() => {
+              setShowModal(!showModal);
+            }}
           >
             <div className="border-2 border-gray-300 rounded-sm">
               <AiOutlinePlus />
