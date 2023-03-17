@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 
 import { IoMdClose } from "react-icons/io";
 
-export default ({ setShowModal, title, children }) => {
+const Modal = ({ setShowModal, title, children }) => {
   const menuRef = useRef();
 
   const handler = (e) => {
@@ -43,3 +43,5 @@ export default ({ setShowModal, title, children }) => {
     </div>
   );
 };
+
+export default Modal;

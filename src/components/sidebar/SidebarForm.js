@@ -4,7 +4,7 @@ import Picker from "@emoji-mart/react";
 
 import { FaCaretRight } from "react-icons/fa";
 
-export default ({ label }) => {
+const SidebarForm = ({ label }) => {
   const [emoji, setEmoji] = useState("📁");
   const [emojiPicker, setEmojiPicker] = useState(false);
 
@@ -48,3 +48,5 @@ export default ({ label }) => {
     </div>
   );
 };
+
+export default SidebarForm;

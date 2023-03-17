@@ -129,7 +129,7 @@ const Login = (props) => {
         </form>
       </div>
       <div className="flex flex-row gap-2 my-4 items-center justify-center">
-        <p>Don't have an account?</p>
+        <p>Don&#39;t have an account?</p>
         <Link href="/auth/register">
           <button
             className="underline hover:text-blue-500 cursor-pointer"

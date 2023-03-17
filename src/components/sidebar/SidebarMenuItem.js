@@ -1,4 +1,4 @@
-export default ({ icon, label, amount }) => {
+const SidebarMenuItem = ({ icon, label, amount }) => {
   return (
     <button className="flex flex-row gap-2 items-center hover:bg-slate-200 text-left py-2 px-3 w-full">
       {icon}
@@ -7,3 +7,5 @@ export default ({ icon, label, amount }) => {
     </button>
   );
 };
+
+export default SidebarMenuItem;

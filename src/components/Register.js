@@ -64,9 +64,11 @@ const Register = (props) => {
         {forms.map((form, i) => {
           const isPassword = form.id === "password";
           return (
-            <div className={"mb-4" + isPassword ? "flex flex-row-reverse" : ""}>
+            <div
+              key={i}
+              className={"mb-4" + isPassword ? "flex flex-row-reverse" : ""}
+            >
               <Input
-                key={i}
                 id={form.id}
                 type={isPassword && !togglePassword ? "password" : "text"}
                 placeholder={form.placeholder}
