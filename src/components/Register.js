@@ -52,7 +52,7 @@ const Register = (props) => {
         </div>
       </div>
       <h1 className="text-2xl text-center my-2 mx-10">
-        Get organized with LinkSavvy!
+        Get organized with LinkNetz!
       </h1>
       <h4 className="text-sm text-center my-2">
         Sign up and simplify your bookmark management
@@ -104,7 +104,7 @@ const Register = (props) => {
             className="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
             type="submit"
           >
-            Sign Up
+            Register
           </button>
           <div>
             <div className="flex justify-center items-center my-4">
@@ -124,7 +124,7 @@ const Register = (props) => {
             className="underline hover:text-blue-500 cursor-pointer"
             onClick={() => setMode("login")}
           >
-            Sign in
+            Log In
           </button>
         </Link>
       </div>

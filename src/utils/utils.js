@@ -5,16 +5,17 @@ import Router from "next/router";
 
 const withAuth = (WrappedComponent) => {
   return (props) => {
-    const { token } = useContext(TokenContext);
+    const { token, isTokenLoading } = useContext(TokenContext);
     const router = useRouter();
 
     useEffect(() => {
       const isOnAuth = router.pathname.startsWith("/auth");
       const isRegister = router.pathname === "/auth/register";
-      if (!token) {
+
+      if (!token && !isTokenLoading) {
         if (!isRegister) router.push("/auth/login");
       } else if (isOnAuth) router.push("/");
-    }, [token]);
+    }, [token, isTokenLoading]);
 
     return <WrappedComponent {...props} />;
   };
