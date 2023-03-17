@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "../Search";
+import Search from "./Search";
 
 import Image from "next/image";
 import Link from "next/link";
