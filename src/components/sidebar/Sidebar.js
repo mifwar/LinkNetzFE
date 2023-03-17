@@ -1,12 +1,7 @@
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { TbMist, TbHash } from "react-icons/tb";
 import { BiCategory } from "react-icons/bi";
-import { FiCheck, FiX } from "react-icons/fi";
-import { FaCaretRight } from "react-icons/fa";
-
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
 
 import SidebarDropdownMenuItem from "./SidebarDropdownMenuItem";
 import SidebarMenuItem from "./SidebarMenuItem";
@@ -79,11 +74,10 @@ const Sidebar = () => {
 
   return (
     <div className="flex flex-col h-full w-80 font-Lato overflow-y-auto border-r">
-      <div>
-        {menuItems.map((menuItem, i) => (
-          <SidebarMenuItem {...menuItem} key={i} />
-        ))}
-      </div>
+      {menuItems.map((menuItem, i) => (
+        <SidebarMenuItem {...menuItem} key={i} />
+      ))}
+
       <hr className="border-t border-gray-400 my-3" />
       {dropdownMenuItems.map((menu, i) => {
         return <SidebarDropdownMenuItem {...menu} key={i} />;

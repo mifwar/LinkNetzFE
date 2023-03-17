@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { AiOutlineClose } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { RiCloseCircleFill } from "react-icons/ri";
 
