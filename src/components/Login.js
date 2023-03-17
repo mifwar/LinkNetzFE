@@ -62,7 +62,7 @@ const Login = (props) => {
           <FiLink />
         </div>
       </div>
-      <h1 className="text-2xl text-center my-2 mx-20">Welcome to LinkSavvy!</h1>
+      <h1 className="text-2xl text-center my-2 mx-20">Welcome to LinkNetz!</h1>
       <h4 className="text-sm text-center my-2">log in to continue</h4>
 
       <div className="w-96 mx-auto">

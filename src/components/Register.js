@@ -52,7 +52,7 @@ const Register = (props) => {
         </div>
       </div>
       <h1 className="text-2xl text-center my-2 mx-10">
-        Get organized with LinkSavvy!
+        Get organized with LinkNetz!
       </h1>
       <h4 className="text-sm text-center my-2">
         Sign up and simplify your bookmark management

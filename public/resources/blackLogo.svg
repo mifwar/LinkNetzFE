@@ -1,65 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg
-   width="200mm"
-   height="40mm"
-   viewBox="0 0 200 40"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
-   sodipodi:docname="blackLogo.svg"
+<svg width="200mm" height="40mm" viewBox="0 0 200 40" version="1.1" id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)" sodipodi:docname="blackLogo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.64052329"
-     inkscape:cx="333.32121"
-     inkscape:cy="561.25984"
-     inkscape:window-width="1920"
-     inkscape:window-height="963"
-     inkscape:window-x="1440"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     showguides="false" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-size:32.6736px;line-height:1.25;font-family:poppins;-inkscape-font-specification:poppins;stroke-width:0.816841"
-       x="37.667194"
-       y="29.783884"
-       id="text1970"><tspan
-         sodipodi:role="line"
-         id="tspan1968"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:poppins;-inkscape-font-specification:'poppins Medium';stroke-width:0.816841"
-         x="37.667194"
-         y="29.783884">LinkSavvy</tspan></text>
-    <g
-       style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
-       id="g9684"
-       transform="matrix(1.5019027,0,0,1.5019027,0.16547631,0.77066557)">
-      <path
-         d="m 10,13 a 5,5 0 0 0 7.54,0.54 l 3,-3 A 5,5 0 0 0 13.47,3.47 l -1.72,1.71"
-         id="path9672" />
-      <path
-         d="M 14,11 A 5,5 0 0 0 6.46,10.46 l -3,3 a 5,5 0 0 0 7.07,7.07 l 1.71,-1.71"
-         id="path9674" />
-    </g>
-  </g>
+   <sodipodi:namedview id="namedview7" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+      inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="mm"
+      showgrid="false" inkscape:zoom="0.64052329" inkscape:cx="333.32121" inkscape:cy="561.25984"
+      inkscape:window-width="1920" inkscape:window-height="963" inkscape:window-x="1440" inkscape:window-y="25"
+      inkscape:window-maximized="1" inkscape:current-layer="layer1" showguides="false" />
+   <defs id="defs2" />
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <text xml:space="preserve"
+         style="font-size:32.6736px;line-height:1.25;font-family:poppins;-inkscape-font-specification:poppins;stroke-width:0.816841"
+         x="37.667194" y="29.783884" id="text1970">
+         <tspan sodipodi:role="line" id="tspan1968"
+            style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:poppins;-inkscape-font-specification:'poppins Medium';stroke-width:0.816841"
+            x="37.667194" y="29.783884">LinkNetz</tspan>
+      </text>
+      <g style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" id="g9684"
+         transform="matrix(1.5019027,0,0,1.5019027,0.16547631,0.77066557)">
+         <path d="m 10,13 a 5,5 0 0 0 7.54,0.54 l 3,-3 A 5,5 0 0 0 13.47,3.47 l -1.72,1.71" id="path9672" />
+         <path d="M 14,11 A 5,5 0 0 0 6.46,10.46 l -3,3 a 5,5 0 0 0 7.07,7.07 l 1.71,-1.71" id="path9674" />
+      </g>
+   </g>
 </svg>

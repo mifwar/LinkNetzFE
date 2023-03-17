@@ -18,7 +18,7 @@ const Navbar = (props) => {
             src="/resources/blackLogo.svg"
             width={175}
             height={20}
-            alt="LinkSavvy logo"
+            alt="LinkNetz logo"
           />
         </Link>
 
