@@ -1,6 +1,6 @@
 import { RiSearchLine } from "react-icons/ri";
 
-export default () => {
+const Search = () => {
   return (
     <div className="flex gap-3 px-4 items-center h-10 bg-gray-200 rounded-full mx-auto m-2 focus-within:outline outline-blue-400 -outline-offset-2 w-96">
       <div>
@@ -14,3 +14,5 @@ export default () => {
     </div>
   );
 };
+
+export default Search;

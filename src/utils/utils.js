@@ -4,7 +4,7 @@ import { TokenContext } from "../pages/_app";
 import Router from "next/router";
 
 const withAuth = (WrappedComponent) => {
-  return (props) => {
+  const Component = (props) => {
     const { token, isTokenLoading } = useContext(TokenContext);
     const router = useRouter();
 
@@ -19,6 +19,8 @@ const withAuth = (WrappedComponent) => {
 
     return <WrappedComponent {...props} />;
   };
+
+  return Component;
 };
 
 export default withAuth;

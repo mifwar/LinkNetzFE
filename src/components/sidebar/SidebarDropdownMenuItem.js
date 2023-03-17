@@ -4,7 +4,14 @@ import { AiOutlinePlus, AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import Modal from "../modal/Modal";
 import SidebarForm from "./SidebarForm";
 
-export default ({ label, icon, handler, placeholder, ref, contents }) => {
+const SidebarDropdownMenuItem = ({
+  label,
+  icon,
+  handler,
+  placeholder,
+  ref,
+  contents,
+}) => {
   const [showHidden, setShowHidden] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -62,3 +69,5 @@ export default ({ label, icon, handler, placeholder, ref, contents }) => {
     </div>
   );
 };
+
+export default SidebarDropdownMenuItem;

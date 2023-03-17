@@ -42,9 +42,9 @@ const UserMenu = () => {
   return (
     <div className="flex">
       <div className="flex flex-col mx-auto h-full mr-2 shadow">
-        {UserMenus.map((menu) => {
+        {UserMenus.map((menu, i) => {
           return (
-            <button onClick={menu.callback}>
+            <button key={i} onClick={menu.callback}>
               <Link
                 className="flex flex-row items-center gap-2 py-2 px-4 hover:bg-slate-200 w-full"
                 href={menu.endpoint}
