@@ -1,18 +1,14 @@
-import { useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { TbMist, TbHash } from "react-icons/tb";
 import { BiCategory } from "react-icons/bi";
 
 import SidebarDropdownMenuItem from "./SidebarDropdownMenuItem";
 import SidebarMenuItem from "./SidebarMenuItem";
+import { TokenContext } from "../../pages/_app";
 
 const Sidebar = () => {
-  const handleNewCategory = () => {
-    console.log("add new category");
-  };
-  const handleNewTag = () => {
-    console.log("add new tags");
-  };
+  const { token } = useContext(TokenContext);
 
   const menuItems = [
     {
@@ -27,50 +23,49 @@ const Sidebar = () => {
     },
   ];
 
+  const [categoryContents, setCategoryContents] = useState([]);
+  const [tagContents, setTagContents] = useState([]);
+
+  const requestOptions = {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
   const dropdownMenuItems = [
     {
-      label: "Categories",
+      title: "Categories",
+      label: "Category",
       icon: <BiCategory />,
-      handler: handleNewCategory,
-      placeholder: "Category Name",
-      ref: useRef(null),
-      contents: [
-        {
-          label: "knowledge",
-          emoji: "🧠",
-        },
-        {
-          label: "funny",
-          emoji: "🤣",
-        },
-        {
-          label: "othersothersothersothersothersothersothers",
-          emoji: "📁",
-        },
-      ],
+      contents: categoryContents,
+      onSubmitDone: () => fetchData("categories", setCategoryContents),
     },
     {
-      label: "Tags",
+      title: "Tags",
+      label: "Tag",
       icon: <TbHash />,
-      handler: handleNewTag,
-      placeholder: "Tag Name",
-      ref: useRef(null),
-      contents: [
-        {
-          label: "music",
-          emoji: "🎵",
-        },
-        {
-          label: "movie",
-          emoji: "🍿",
-        },
-        {
-          label: "tech",
-          emoji: "🧑‍💻",
-        },
-      ],
+      contents: tagContents,
+      onSubmitDone: () => fetchData("tags", setTagContents),
     },
   ];
+
+  const fetchData = async (endpoint, setState) => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/${endpoint}`,
+      requestOptions
+    );
+
+    const data = await response.json();
+
+    if (data) setState(data);
+  };
+
+  useEffect(() => {
+    fetchData("categories", setCategoryContents);
+    fetchData("tags", setTagContents);
+  }, []);
 
   return (
     <div className="flex flex-col h-full w-80 font-Lato overflow-y-auto border-r">
@@ -79,6 +74,7 @@ const Sidebar = () => {
       ))}
 
       <hr className="border-t border-gray-400 my-3" />
+
       {dropdownMenuItems.map((menu, i) => {
         return <SidebarDropdownMenuItem {...menu} key={i} />;
       })}
