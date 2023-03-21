@@ -21,7 +21,7 @@ const Login = (props) => {
   const eyeStyle =
     "text-gray-300 top-1 my-1 right-2 text-xl hover:text-gray-400";
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
     const payload = JSON.stringify({ email: email, password: password });
