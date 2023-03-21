@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { AiOutlinePlus, AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 import Modal from "../modal/Modal";
 import SidebarForm from "./SidebarForm";
 
 const SidebarDropdownMenuItem = ({
+  title,
   label,
   icon,
-  handler,
-  placeholder,
-  ref,
   contents,
+  onSubmitDone,
 }) => {
   const [showHidden, setShowHidden] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -19,11 +19,14 @@ const SidebarDropdownMenuItem = ({
     return menuItem.map((sub, i) => {
       return (
         <button
-          className="flex gap-2 hover:bg-slate-200 px-9 overflow-ellipsis"
+          className="group flex gap-2 items-center hover:bg-slate-200 pl-9 pr-3 overflow-ellipsis"
           key={i}
         >
           <p className="">{sub.emoji}</p>
-          <p className="w-full text-left truncate">{sub.label}</p>
+          <p className="w-full text-left truncate">{sub.name}</p>
+          <button className="invisible group-hover:visible hover:bg-slate-100 p-1 mx-auto mr-0">
+            <BsThreeDotsVertical />
+          </button>
         </button>
       );
     });
@@ -33,7 +36,11 @@ const SidebarDropdownMenuItem = ({
     <div className="w-full">
       {showModal && (
         <Modal title={`Add New ${label}`} setShowModal={setShowModal}>
-          <SidebarForm label={label} />
+          <SidebarForm
+            label={label}
+            showModal={setShowModal}
+            onSubmitDone={onSubmitDone}
+          />
         </Modal>
       )}
       <button
@@ -44,7 +51,7 @@ const SidebarDropdownMenuItem = ({
       >
         <div>{icon}</div>
         <div className="flex flex-row w-full">
-          <p className="py-2 ">{label}</p>
+          <p className="py-2 ">{title}</p>
         </div>
         <div className="mx-auto mr-0">
           {!showHidden ? <AiOutlineDown /> : <AiOutlineUp />}
@@ -59,7 +66,7 @@ const SidebarDropdownMenuItem = ({
               setShowModal(!showModal);
             }}
           >
-            <div className="border-2 border-gray-300 rounded-sm">
+            <div className="border-2 border-gray-300 rounded-sm text-xs">
               <AiOutlinePlus />
             </div>
             <p>Add New {label}</p>
