@@ -21,7 +21,7 @@ const Register = (props) => {
     { id: "password", placeholder: "Password", setter: setPassword },
   ];
 
-  const handleRegister = async () => {
+  const handleRegister = async (event) => {
     event.preventDefault();
 
     const payload = JSON.stringify({
