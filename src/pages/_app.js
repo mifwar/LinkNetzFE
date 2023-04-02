@@ -52,8 +52,6 @@ export default function App({ Component, pageProps }) {
         );
         const json = await response.json();
 
-        console.log("json user: ", json);
-
         if (json.name) {
           setName(json.name);
           setIsTokenLoading(false);
