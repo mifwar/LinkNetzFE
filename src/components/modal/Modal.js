@@ -20,7 +20,7 @@ const Modal = ({ setShowModal, title, children }) => {
   }, []);
 
   return (
-    <div className="fixed top-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-30">
+    <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-30">
       <div
         className="flex flex-col gap-4 bg-white p-4 rounded-lg shadow-lg"
         ref={menuRef}
