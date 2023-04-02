@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
@@ -6,7 +6,7 @@ import { FaCaretRight } from "react-icons/fa";
 
 import { TokenContext } from "../../pages/_app";
 
-const SidebarForm = ({ label, showModal, onSubmitDone }) => {
+const SidebarForm = ({ label, showModal, onSubmitDone, openMenu }) => {
   const [emoji, setEmoji] = useState("📁");
   const [emojiPicker, setEmojiPicker] = useState(false);
   const [name, setName] = useState("");
@@ -31,7 +31,7 @@ const SidebarForm = ({ label, showModal, onSubmitDone }) => {
     };
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/add/${label.toLowerCase()}`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/${label.toLowerCase()}`,
       requestOptions
     );
 
@@ -39,6 +39,7 @@ const SidebarForm = ({ label, showModal, onSubmitDone }) => {
 
     if (res) {
       onSubmitDone();
+      openMenu();
     }
 
     showModal(false);
@@ -78,6 +79,12 @@ const SidebarForm = ({ label, showModal, onSubmitDone }) => {
           className="py-2 px-3 border rounded-md w-full "
           maxLength={maxLength}
           placeholder={`${label} Name`}
+          onKeyPress={(event) => {
+            const pattern = /^[a-zA-Z0-9 ]+$/;
+            if (!pattern.test(event.key)) {
+              event.preventDefault();
+            }
+          }}
           onChange={(event) => {
             setName(event.target.value);
             setCountName(event.target.value.length);
